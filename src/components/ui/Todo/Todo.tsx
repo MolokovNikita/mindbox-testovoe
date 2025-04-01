@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Input, Button } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
-import { Task } from "../../../Models/types";
+import { Task } from "../../../models/types";
 import { RootState } from "../../../store/store";
 import {
   addTask,
@@ -68,6 +68,14 @@ const ToDoApp: React.FC = () => {
       />
 
       <ul className={styles.taskList}>
+        {filteredTasks.length === 0 && (
+          <li
+            className={styles.taskItem}
+            style={{ cursor: "default", pointerEvents: "none" }}
+          >
+            Task list is empty
+          </li>
+        )}
         {filteredTasks.map((task: Task) => (
           <li
             key={task.id}
