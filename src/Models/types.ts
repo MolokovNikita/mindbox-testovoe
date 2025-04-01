@@ -3,10 +3,9 @@ export interface Task {
   text: string;
   completed: boolean;
 }
-
 export interface TasksState {
-    tasks: Task[];
-    filter: string;
-  }
+  tasks: Task[];
+  filter: string;
+}
 
 export type FilterType = "all" | "active" | "completed";

@@ -1,5 +1,5 @@
 import { tasksReducer, addTask, toggleTask } from "../features/tasksSlice";
-import { TasksState } from "../Models/types";
+import { TasksState } from "../models/types";
 
 describe("tasksSlice", () => {
   const initialState: TasksState = {
