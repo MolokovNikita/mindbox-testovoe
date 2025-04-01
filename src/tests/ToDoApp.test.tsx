@@ -1,32 +1,33 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Provider } from "react-redux";
-import { store } from "../store/store";
+import { mockStore } from "./mockStore";
 import ToDoApp from "../components/ui/Todo/Todo";
 
 describe("ToDoApp", () => {
-  test("renders and adds new task", async () => {
+  test("adds and displays new task", async () => {
     render(
-      <Provider store={store}>
+      <Provider store={mockStore}>
         <ToDoApp />
       </Provider>
     );
 
     const input = screen.getByPlaceholderText("What needs to be done ?");
     fireEvent.change(input, { target: { value: "New Task" } });
-    fireEvent.keyPress(input, { key: "Enter", code: "Enter" });
+    fireEvent.keyDown(input, { key: "Enter", code: "Enter" });
 
     expect(await screen.findByText("New Task")).toBeInTheDocument();
   });
 
-  test("toggles task completion", async () => {
+  test("toggles task status", async () => {
     render(
-      <Provider store={store}>
+      <Provider store={mockStore}>
         <ToDoApp />
       </Provider>
     );
 
-    const checkbox = await screen.findByRole("checkbox");
-    fireEvent.click(checkbox);
-    expect(checkbox).toBeChecked();
+    const checkboxes = await screen.findAllByRole("checkbox");
+    fireEvent.click(checkboxes[0]);
+
+    expect(checkboxes[0]).toBeChecked();
   });
 });

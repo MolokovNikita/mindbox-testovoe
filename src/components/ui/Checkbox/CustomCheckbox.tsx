@@ -7,13 +7,11 @@ interface CheckboxProps {
 
 const CustomCheckbox: React.FC<CheckboxProps> = ({ checked, onChange }) => {
   const handleCheckboxClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
     onChange();
   };
 
   return (
     <div
-      onClick={handleCheckboxClick}
       style={{
         width: 24,
         height: 24,
@@ -40,6 +38,19 @@ const CustomCheckbox: React.FC<CheckboxProps> = ({ checked, onChange }) => {
           borderRadius: "50%",
           backgroundColor: checked ? "transparent" : "transparent",
           transition: "background-color 0.2s ease",
+        }}
+      />
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={onChange}
+        onClick={handleCheckboxClick}
+        style={{
+          position: "absolute",
+          opacity: 0,
+          width: "100%",
+          height: "100%",
+          cursor: "pointer",
         }}
       />
 
