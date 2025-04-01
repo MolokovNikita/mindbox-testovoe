@@ -1,0 +1,64 @@
+.container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: rgba(208, 208, 208, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 5rem;
+  color: rgba(134, 2, 2, 0.2);
+  font-weight: lighter;
+  text-align: center;
+  text-transform: lowercase;
+  margin: 0;
+}
+
+
+.filterButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255,255,255,0.8);
+
+}
+
+.taskList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(255,255,255,0.8);
+  
+}
+
+.taskItem {
+  display: flex;
+  align-items: center;
+  cursor: pointer; 
+  transition: background 0.2s ease-in-out;
+  padding: 12px;
+  border-bottom: 1px solid rgba(185, 184, 184, 0.3);
+  &:hover {
+    background: rgba(169, 169, 169, 0.2); 
+  }
+}
+.completedTask {
+  text-decoration: line-through;
+  color: gray;
+}
+
+
+.taskCounter {
+  color: #666;
+  font-size: 0.9rem;
+  width: 20%;
+  margin: 10px 20px;
+}
+
+.clearButton {
+  border-color: #ccc;
+  color: #666;
+  float: right;
+}
