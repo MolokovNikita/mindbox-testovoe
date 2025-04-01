@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { persistStore, persistReducer } from "redux-persist";
+import { persistStore } from "redux-persist";
 import { combineReducers } from "redux";
 import { tasksReducer } from "../features/tasksSlice";
 

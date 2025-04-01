@@ -6,7 +6,7 @@ interface CheckboxProps {
 }
 
 const CustomCheckbox: React.FC<CheckboxProps> = ({ checked, onChange }) => {
-  const handleCheckboxClick = (e: React.MouseEvent) => {
+  const handleCheckboxClick = () => {
     onChange();
   };
 
