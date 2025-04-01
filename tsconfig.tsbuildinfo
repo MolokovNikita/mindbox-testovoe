@@ -1,0 +1,1 @@
+{"root":["./src/setuptests.ts","./src/vite-env.d.ts","./src/features/tasksslice.ts","./src/models/types.ts","./src/store/hooks.ts","./src/store/store.ts","./src/tests/mockstore.ts","./src/app.tsx","./src/main.tsx","./src/components/ui/checkbox/customcheckbox.tsx","./src/components/ui/todo/todo.tsx","./src/tests/todoapp.test.tsx"],"version":"5.7.3"}
